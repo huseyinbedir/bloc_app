@@ -38,12 +38,10 @@ class AppService {
     switch (response.statusCode) {
       case 200:
         var jsonResponse = json.decode(response.body);
-        if (jsonResponse['status'] == "token_expired") {
-          await CacheService.instance.removeAllCache();
-          await SecureService.instance.deleteAllSecure();
-        }
         return jsonResponse;
       default:
+        await CacheService.instance.removeAllCache();
+        await SecureService.instance.deleteAllSecure();
         return FetchDataException("error");
     }
   }
