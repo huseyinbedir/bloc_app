@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:bloc_app/core/models/response_model.dart';
 import 'package:bloc_app/features/splash/bloc/splash_state.dart';
 import 'package:bloc_app/features/splash/model/token_model.dart';
 import 'package:bloc_app/features/splash/service/splash_service.dart';
